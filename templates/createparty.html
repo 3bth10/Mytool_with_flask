@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container mx-auto text-center  ">
+    <h1 class=" text-2xl mb-10">Create New Party</h1>
+    <form action="parties" method="post" class="grid grid-cols-2 gap-3 ">
+    <input value="{{ token }}" type="hidden" name="token" style="position: absolute; ">
+    <input type="text" name="hall" placeholder="Hall Name" class="p-2 m-2 bg-orange-400 rounded-lg border-b text-black">
+    <input type="text" name="location" placeholder="Location" class="p-2 m-2 bg-orange-400 rounded-lg border-b  text-black">
+    <input type="number" name="members" placeholder="Members" class="p-2 m-2 bg-orange-400 rounded-lg border-b  text-black">
+    <input type="number" name="salary" placeholder="Salary" class="p-2 m-2 bg-orange-400 rounded-lg border-b  text-black">
+    <input type="datetime-local" name="date" placeholder="Date" class="p-2 m-2 bg-orange-400 rounded-lg border-b  text-black">
+    <button class="p-2 m-2 bg-orange-300 rounded-lg">save++</button>
+   </form>
+</div>
+
+{% endblock %}

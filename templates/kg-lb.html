@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container mx-auto text-center my-12 px-4 md:px-0">
+    <h1 class="text-2xl md:text-3xl font-bold mb-6 text-orange-800">Kg ↔ Lb Converter</h1>
+    
+    <div class="bg-orange-200 p-8 rounded-xl inline-block shadow-lg transition-transform transform hover:scale-105">
+        <form method="post" class="flex flex-col md:flex-row items-center gap-4">
+            <input class="bg-orange-500 rounded-lg p-2 text-center w-48 md:w-64 focus:outline-none focus:ring-2 focus:ring-orange-400" 
+                   type="number" name="kg-lb" placeholder="Enter number" required>
+            
+            <select name="what" class="rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                <option value="kg-to-lb">kg to lb</option>
+                <option value="lb-to-kg">lb to kg</option>
+            </select>
+            
+            <button class="bg-orange-300 hover:bg-orange-500 text-white font-semibold px-6 py-2 rounded-lg shadow transition-colors">Convert</button>
+        </form>
+
+        {% if num_kglb %}
+            <h3 class="mt-8 text-xl md:text-2xl font-semibold text-black transition-all duration-700">
+                Result: {{ num_kglb }}
+            </h3>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

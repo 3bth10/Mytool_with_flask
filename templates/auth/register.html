@@ -1,0 +1,37 @@
+{% extends "auth/login.html" %}
+{% block content %} 
+<h3 class=" text-2xl mt-10 text-center text-orange-600 border-b w-64 font-bold mx-auto p-1  ">تسجيل </h3>
+
+    <form class="container text-center mt-10 " method="POST" action="/auth/register">
+        <input class="w-90 border-b text-center rounded-lg m-4 block mx-auto " type="text" name="full_name" placeholder="Full Name">
+        <input class="w-90 border-b text-center rounded-lg m-4 block mx-auto " type="text" name="username" placeholder="Username">
+        <input class="w-90 border-b text-center rounded-lg m-4 block mx-auto " type="password" name="password" placeholder="Password">
+        <input class="w-90 border-b text-center rounded-lg m-4 block mx-auto " type="password" name="password2" placeholder="re-password">
+        <input class="w-90 border-b text-center rounded-lg m-4 block mx-auto " type="date" name="birthdate" placeholder="Birthdate">
+        <button class=" drop-shadow-lg block mx-auto mt-6 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Register</button>
+    </form>
+    <div class="text-center border-b p-4 ">
+  If you have an account please 
+  <a class="border text-orange-300 p-1 rounded-lg " href="{{ url_for('login') }}">login</a>
+</div>
+          {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul id="flash-msg text-center" class=flashes>
+    {% for message in messages %}
+      <li class="text-red-300 ">{{ message }}</li>
+    {% endfor %}
+    </ul>
+     <script>
+        
+        setTimeout(() => {
+          const flash = document.getElementById('flash-msg');
+          if (flash) {
+            flash.classList.add('opacity-0'); 
+            setTimeout(() => flash.remove(), 500); // remove after fade
+          }
+        }, 3000);
+      </script>
+  {% endif %}
+{% endwith %}
+
+{% endblock %}

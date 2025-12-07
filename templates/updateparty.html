@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container ">
+    <h1 class=" text-2xl mb-10 text-center">Update Party</h1>
+    <form action="/updateparty/{{ party.id }}" method="post" class="grid grid-cols-2 gap-3 ">
+    <input type="text" name="hall" placeholder="Hall Name" value="{{ party.hall }}" class="p-2 m-2 bg-orange-400 rounded-lg border-b text-black">
+    <input type="text" name="location" placeholder="Location" value="{{ party.location }}" class="p-2 m-2 bg-orange-400 rounded-lg border-b  text-black">
+    <input type="number" name="members" placeholder="Members" value="{{ party.members }}" class="p-2 m-2 bg-orange-400 rounded-lg border-b  text-black">
+    <input type="number" name="salary" placeholder="Salary" value="{{ party.salary }}" class="p-2 m-2 bg-orange-400 rounded-lg border-b  text-black">
+    <input type="datetime-local" name="date" placeholder="Date" value="{{ party.date }}" class="p-2 m-2 bg-orange-400 rounded-lg border-b  text-black">
+    <button class="p-2 m-2 bg-orange-300 rounded-lg">Update</button>
+   </form>
+
+</div>
+{% endblock %}
